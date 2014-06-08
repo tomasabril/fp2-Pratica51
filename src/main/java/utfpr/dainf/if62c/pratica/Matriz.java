@@ -1,5 +1,7 @@
 package utfpr.dainf.if62c.pratica;
 
+import java.util.Arrays;
+
 /**
  * Representa uma matriz de valores double.
  * Tomas Abril
@@ -47,8 +49,8 @@ public class Matriz {
 	 * @throws MatrizInvalidaException
      */
     public Matriz soma(Matriz matB) throws MatrizInvalidaException {
-	if(mat.length != matB.getMatriz().length 
-	  || mat[0].length != matB.getMatriz().length) {
+	if( mat.length != matB.getMatriz().length 
+	  || mat[0].length != matB.getMatriz()[0].length ) {
 		throw new SomaMatrizesIncompativeisException(this, matB); }
 	Matriz s = new Matriz(mat.length, mat[0].length);
 	for( int i=0; i < mat.length; i++) {
@@ -82,12 +84,13 @@ public class Matriz {
      */
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder();
-        for (double[] linha: mat) {
+   /*     StringBuilder s = new StringBuilder();
+        for (double[] linha : mat) {
             s.append("[ ");
-            for (double x: linha) {
+            for (double x : linha) {
                 s.append(x).append(" | "); }
             s.append("]\n"); }
         return s.toString(); }
-    
+    */
+	return Arrays.deepToString(mat); }
 }
