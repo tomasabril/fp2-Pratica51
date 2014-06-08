@@ -53,12 +53,32 @@ public class Pratica51
         m4[2][1] = 2.1;
 	m4[0][2] = 0.1;        
 
-        Matriz transp = orig.getTransposta();
-        Matriz somada = orig.soma(outra);
-	Matriz mult   = outra2.prod(outra3);
-        System.out.println("Matriz original: \n" + orig);
-        System.out.println("Matriz transposta: \n" + transp);
-	System.out.println("Matriz somada: \n" + somada);
-	System.out.println("Matriz multiplicada: \n" + mult);
+	try {
+		Matriz outra4 = new Matriz(3,-1);
+		System.out.println("Matriz original: \n" + outra4);}
+	catch (MatrizInvalidaException e) {
+		System.out.println(e); }
+	try {
+		Matriz somada = orig.soma(outra3);
+		System.out.println("somada: \n" + somada); }
+	catch (SomaMatrizesIncompativeisException e) {
+		System.out.println(e); }
+	try {
+		Matriz prod = orig.prod(outra);
+		System.out.println("Matriz multiplicada: \n" + prod); }
+	catch (ProdMatrizesIncompativeisException e) {
+		System.out.println(e); }
+	
+	try {
+		Matriz transp = orig.getTransposta();
+		Matriz somada = orig.soma(outra);
+		Matriz mult   = outra2.prod(outra3);
+		System.out.println("Matriz original: \n" + orig);
+		System.out.println("Matriz transposta: \n" + transp);
+		System.out.println("Matriz somada: \n" + somada);
+		System.out.println("Matriz multiplicada: \n" + mult);} 
+	catch (MatrizInvalidaException | ProdMatrizesIncompativeisException | SomaMatrizesIncompativeisException e) {
+		System.out.println(e); }
+
     }
 }
