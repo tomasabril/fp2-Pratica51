@@ -7,7 +7,7 @@
  * @author Wilson Horstmeyer Bogado <wilson@utfpr.edu.br>
  * modificado por Tomás Abril
  */
-public class Main
+public class Pratica51
 {
     public static void main(String[] args) 
     {
